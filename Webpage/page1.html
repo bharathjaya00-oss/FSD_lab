@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Portal Page with Settings Icon</title>
+  <style>
+    /* Reset styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Top cover rectangle with heading */
+    .top-cover {
+      width: 100%;
+      height: 150px;
+      background-color: #7a397a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .top-cover h1 {
+      color: #fff;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    /* Container for icons */
+    .icon-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    /* Icon styles */
+    .icon {
+      background-color: #ffffff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .icon:hover {
+      background-color: #e0e0e0;
+      transform: scale(1.1);
+    }
+
+    .icon svg {
+      fill: #555;
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Login Form Section Styles */
+    #login-section {
+      padding: 60px 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    #login-section h2 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    label {
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    button {
+      padding: 14px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .register-link {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 0.95em;
+    }
+
+    .register-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top cover rectangle with heading -->
+  <div class="top-cover">
+    <h1>Login Portal</h1>
+  </div>
+
+  <!-- Icons container with login and settings icons -->
+  <div class="icon-container">
+    <!-- Login icon -->
+    <div class="icon" title="Login" onclick="document.getElementById('login-section').scrollIntoView({behavior: 'smooth'});">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+      </svg>
+    </div>
+    <!-- Settings icon -->
+    <div class="icon" title="Settings" onclick="alert('Settings clicked!');">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.03-.66-.07-.98l2.11-1.65a.5.5 0 00.12-.66l-2-3.46a.5.5 0 00-.61-.21l-2.49 1a6.98 6.98 0 00-1.63-.98l-.38-2.65A.5.5 0 0014 2h-4a.5.5 0 00-.49.42l-.38 2.65c-.58.22-1.1.54-1.63.98l-2.49-1a.5.5 0 00-.61.21l-2 3.46a.5.5 0 00.12.66l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65a.5.5 0 00-.12.66l2 3.46c.14.24.41.3.61.21l2.49-1c.53.44 1.05.76 1.63.98l.38 2.65A.5.5 0 0010 22h4a.5.5 0 00.49-.42l.38-2.65c.58-.22 1.1-.54 1.63-.98l2.49 1c.2.09.47.03.61-.21l2-3.46a.5.5 0 00-.12-.66l-2.11-1.65zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Login Form Section -->
+  <section id="login-section">
+    <h2>Login to Your Account</h2>
+    <form id="loginForm" autocomplete="off" aria-label="Login Form">
+      <label for="userId">User ID</label>
+      <input type="text" id="userId" name="userId" placeholder="Enter your user ID" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+      <button type="submit">Login</button>
+    </form>
+    <div class="register-link">
+      <p>
+        Don't have an account?
+        <a href="register.html" target="_blank" rel="noopener noreferrer">Register here</a>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Login is submitted!');
+    });
+  </script>
+
+</body>
+</html>
